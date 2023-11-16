@@ -26,6 +26,17 @@ public class Quiz {
 	}
 	
 	public void takeQuiz() {
+		int totalPoints = 0;
+		for ( int i = 0; i < questions.length; i++)
+		{
+			questions[i].displayPrompt();
+			String UserAnswer = getUserAnswer();
+			int points = questions[i].checkAnswer(UserAnswer);
+			System.out.println(points);
+			totalPoints = totalPoints + points;
+		}
+		System.out.println("Your score is " + totalPoints + " out of "+ getTotalPoints());
+		
 		//FIXME
 	}
 	
